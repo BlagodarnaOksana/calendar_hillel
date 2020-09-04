@@ -7,12 +7,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-/* .App{
-  background: url('./images/autumn.jpg');
-  background: url('./images/falingLeaves.gif');
-  height: 100vh;
-  
-} */
+
 .App{
   background: url('./images/cosmos.gif');
   width: 100vw;
