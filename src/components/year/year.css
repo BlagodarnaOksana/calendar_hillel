@@ -1,0 +1,13 @@
+.Year{
+    color: rgb(199, 16, 245);
+    font-size: 52px;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.chevron-left{
+    color: rgb(199, 16, 245);
+    
+}

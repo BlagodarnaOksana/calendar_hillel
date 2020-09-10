@@ -1,16 +1,18 @@
 import React from 'react';
 import './App.css';
-import Month from './components/month';
+import Month from './components/month/month';
+import Year from './components/year/year';
 
 function App() {
-  let date = new Date();
-  const year = date.getFullYear();
-  const month = date.getMonth();
-
+  
   return (
     <div className='App'>
-      <header className='App-header'>The calendar 2020</header>
+      <header className='App-header'>
+      <Year />
+      </header>
       <Month />
+      
+
     </div>
   );
 }

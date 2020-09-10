@@ -13,16 +13,12 @@ body {
   width: 100vw;
   height: 100vh;
   
-}
-
+} 
+/*
 .App-header{
-  color: rgb(199, 16, 245);
-  font-size: 52px;
-  font-weight: 700;
-  display: flex;
-  justify-content: center;
-
+  
 }
+
 .Month{
   color: white;
   display: grid;
@@ -35,4 +31,4 @@ body {
   display: flex;
   justify-content: center;
   border: 1px blueviolet solid;
-}
+} */
