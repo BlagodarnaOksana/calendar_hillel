@@ -6,7 +6,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  Redirect
 } from "react-router-dom";
 
 function App() {
@@ -20,7 +21,12 @@ function App() {
           <Year year={match.params.year} />
         )
       }}/>
-     
+    
+      <Route path="/today" exact render={()=> {
+        const today = new Date();
+        const redirectPath = `/year/${today.getFullYear()}`;
+        return (<Redirect to={redirectPath} />)
+      }}/>
       
     </Router>
   );

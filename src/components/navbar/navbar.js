@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 //import React from 'react';
 import './navbar.css';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    Redirect
+  } from "react-router-dom";
 
 class Navbar extends React.Component {
 
@@ -8,7 +15,10 @@ class Navbar extends React.Component {
 
     return (
         <div className='navbar'>
-            <a href='/today'>Current year</a>
+            <Link to="/today">
+                <div>Current year</div>
+            </Link>
+            
             <a href='/today'>Current month</a>
             <a href='/today'>Today</a>
         </div>
