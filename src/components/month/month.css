@@ -1,3 +1,15 @@
-.Month{
-    color: white;
+.month{
+    
+    color: rgb(199, 16, 245);
+    font-size: 46px;
+    font-weight: 800;
+}
+
+.weekDays{
+    border: solid 1px rgb(75, 4, 168);
+    font-size: 18px;
+    font-weight: 700;
+    color: rgb(124, 7, 134);
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
 }

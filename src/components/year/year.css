@@ -11,3 +11,11 @@
     color: rgb(199, 16, 245);
     
 }
+.MonthBlock{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  font-size: 28px;
+  grid-gap: 20px;
+  text-align: center;
+  margin-top: 20px;
+}
