@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+//import React, { Component } from 'react';
+import React from 'react';
 import './month.css';
 
 class Month extends React.Component {
@@ -22,7 +23,7 @@ class Month extends React.Component {
     //   day.push(' ');
     // }
     
-    console.log(emptyDays);
+    //console.log(emptyDays);
   return (
   <div className='monthComponent'>
     <div className='month'>

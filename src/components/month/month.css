@@ -24,8 +24,8 @@
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-gap: 15px;
-    border: solid 1px white;
     height: 300px;
+    background-color: black;
     
     
 }
