@@ -15,9 +15,12 @@ function App() {
     <Router>
       <Navbar />
       
-      <Route path="/year" exact>
-        <Year />
-      </Route>
+      <Route path="/year/:year" exact render={({match})=>{
+        return(
+          <Year year={match.params.year} />
+        )
+      }}/>
+     
       
     </Router>
   );
