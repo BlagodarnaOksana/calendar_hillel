@@ -1,18 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './year.css';
 import FA from 'react-fontawesome';
 import Month from '../month/month';
 
 class Year extends React.Component {
-  constructor(){
-    super();
-    this.state = { 
-        //date: new Date().toLocaleString('default', {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
-        date: new Date(),
-        
-    };
-    
-  }
+  state = {date: new Date()};
 
 btnReduceYear = () => {
     this.setState({date: new Date(this.state.date.getFullYear()-1, this.state.date.getMonth(), this.state.date.getDate())});
@@ -21,7 +13,7 @@ btnReduceYear = () => {
 btnIncreaseYear = () => {
     this.setState({date: new Date(this.state.date.getFullYear()+1, this.state.date.getMonth(), this.state.date.getDate())});
 }
-
+//date: new Date().toLocaleString('default', {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
   render(){
     
   let yearArr = [];
@@ -37,8 +29,10 @@ btnIncreaseYear = () => {
       <FA name="chevron-right" onClick={this.btnIncreaseYear}/>
     </div>
     <div className='MonthBlock'>
-        {yearArr.map(el =>(
+        {yearArr.map((el, ind) =>( 
+          <div key={ind}>
             <Month firstDay = {el} />
+          </div>
         ))}
     </div>
   </div>

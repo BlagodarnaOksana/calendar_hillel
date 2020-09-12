@@ -6,29 +6,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-/* 
-.App{
-  background: url('./images/cosmos.gif');
-  width: 100vw;
-  height: 100vh;
-  
-}  */
-/*
-.App-header{
-  
-}
-
-.Month{
-  color: white;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  font-size: 28px;
-  grid-gap: 20px;
-  
-}
-.monthName{
   display: flex;
   justify-content: center;
-  border: 1px blueviolet solid;
-} */
+  background: url('./images/cosmos.gif');
+}
+ 
+.App{
+ 
+  
+  
+}  

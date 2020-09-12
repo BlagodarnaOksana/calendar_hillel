@@ -1,15 +1,34 @@
-.month{
+.monthComponent{
+    border: solid 1px rgb(75, 4, 168);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     
-    color: rgb(199, 16, 245);
-    font-size: 46px;
-    font-weight: 800;
+    
 }
 
+/*название месяцев*/
+.month{
+    margin: 20px;
+    color: rgb(199, 16, 245);
+    font-size: 42px;
+    font-weight: 800;
+    
+}
+/*блок с датами в каждом мецяце*/
 .weekDays{
-    border: solid 1px rgb(75, 4, 168);
+    padding: 10px;
     font-size: 18px;
     font-weight: 700;
-    color: rgb(124, 7, 134);
+    color: white;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
+    grid-gap: 15px;
+    border: solid 1px white;
+    height: 300px;
+    
+    
+}
+.dayTitle{
+    border-bottom: double;
 }

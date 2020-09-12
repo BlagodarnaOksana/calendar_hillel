@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './month.css';
 
 class Month extends React.Component {
@@ -9,24 +9,24 @@ class Month extends React.Component {
     const quantDayOfMonth = (firstDayOfNextMonth - firstDayOfMonth)/86400/1000;
     const weekDays = ['ПН', 'ВТ','СР','ЧТ','ПТ','СБ','ВС'];
     const day = [];
-    const emptyDays = firstDayOfMonth.getDay()-1;
+    const emptyDays = firstDayOfMonth.getDay() || 7;
 
-    for (let i = 0; i < emptyDays; i++) {
+    for (let i = 1; i < emptyDays; i++) {
       day.push('');
     }
     for (let i = 1; i <= quantDayOfMonth; i++) {
       day.push(i);
     }
     
-    console.log(quantDayOfMonth);
+    console.log(emptyDays);
   return (
-  <div >
+  <div className='monthComponent'>
     <div className='month'>
       {firstDayOfMonth.toLocaleString('default', {month: 'long'})}
     </div>
     <div className='weekDays'>
-      {weekDays.map(dayTitle => <div> {dayTitle} </div>)}
-      {day.map(day => <div> {day} </div>)}
+      {weekDays.map((dayTitle, ind) => <div className='dayTitle' key={ind}> {dayTitle} </div>)}
+      {day.map((day, ind) => <div key={ind}> {day} </div>)}
 
     </div>
     
