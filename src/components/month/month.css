@@ -10,10 +10,22 @@
 /*название месяцев*/
 .month{
     margin: 20px;
-    background: linear-gradient(#e66465, #9198e5);
+    background: linear-gradient(#64e6ca9d, #9198e5);
     font-size: 36px;
     font-weight: 800;
+    cursor: pointer;
     
+}
+
+
+/* Выбирает любой элемент, который будет соответствовать:link или :visited */
+:any-link {
+    color: rgb(111, 13, 136);
+    text-decoration: none;
+}
+
+:any-link:hover{
+    color: rgb(172, 14, 211);
 }
 /*блок с датами в каждом мецяце*/
 .weekDays{
@@ -34,4 +46,7 @@
 }
 .dayTitle{
     border-bottom: double;
+}
+.currDay{
+    color: red;
 }

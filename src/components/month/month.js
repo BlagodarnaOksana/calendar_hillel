@@ -1,6 +1,13 @@
 //import React, { Component } from 'react';
 import React from 'react';
 import './month.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect
+} from "react-router-dom";
 
 class Month extends React.Component {
   
@@ -11,6 +18,9 @@ class Month extends React.Component {
     const weekDays = ['ПН', 'ВТ','СР','ЧТ','ПТ','СБ','ВС'];
     const day = [];
     const emptyDays = firstDayOfMonth.getDay() || 7;
+    const today = new Date().getDate();
+    const currMonth = new Date().getMonth() === firstDayOfMonth.getMonth();
+    const currYear = new Date().getFullYear() === firstDayOfMonth.getFullYear();
 
     for (let i = 1; i < emptyDays; i++) {
       day.push(' ');
@@ -27,11 +37,20 @@ class Month extends React.Component {
   return (
   <div className='monthComponent'>
     <div className='month'>
-      {firstDayOfMonth.toLocaleString('default', {month: 'long'})}
+      <Link to={`/year/${firstDayOfMonth.getFullYear()}/month/${firstDayOfMonth.getMonth()+1}`}>
+        <div className='monthName'>
+          {firstDayOfMonth.toLocaleString('default', {month: 'long'})}
+        </div>
+      </Link>
     </div>
     <div className='weekDays'>
       {weekDays.map((dayTitle, ind) => <div className='dayTitle' key={ind}> {dayTitle} </div>)}
-      {day.map((day, ind) => <div key={ind}> {day} </div>)}
+      {day.map((day, ind) => <div 
+      key={ind} 
+      className={today === day && currMonth && currYear? 'currDay' : ''}
+      > 
+      {day} 
+      </div>)}
 
     </div>
     

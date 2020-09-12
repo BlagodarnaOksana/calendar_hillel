@@ -15,12 +15,17 @@ class Navbar extends React.Component {
 
     return (
         <div className='navbar'>
-            <Link to="/today">
+            <Link to="/currentyear">
                 <div>Current year</div>
             </Link>
             
-            <a href='/today'>Current month</a>
-            <a href='/today'>Today</a>
+            <Link to="/currentmonth">
+                <div>Current month</div>
+            </Link>
+            
+            <Link to="/today">
+                <div>Today</div>
+            </Link>
         </div>
     )}
 }
