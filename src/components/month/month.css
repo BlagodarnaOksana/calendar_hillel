@@ -1,5 +1,5 @@
 .monthComponent{
-    border: solid 1px rgb(75, 4, 168);
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,8 +10,8 @@
 /*название месяцев*/
 .month{
     margin: 20px;
-    color: rgb(199, 16, 245);
-    font-size: 42px;
+    background: linear-gradient(#e66465, #9198e5);
+    font-size: 36px;
     font-weight: 800;
     
 }
@@ -28,6 +28,9 @@
     height: 300px;
     
     
+}
+.weekDays div:nth-child(7n){
+    color: rgb(199, 16, 245);
 }
 .dayTitle{
     border-bottom: double;

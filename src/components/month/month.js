@@ -12,11 +12,15 @@ class Month extends React.Component {
     const emptyDays = firstDayOfMonth.getDay() || 7;
 
     for (let i = 1; i < emptyDays; i++) {
-      day.push('');
+      day.push(' ');
     }
     for (let i = 1; i <= quantDayOfMonth; i++) {
       day.push(i);
     }
+    // let q = 42 - day.length;
+    // for (let i = 0; i < q; i++) {
+    //   day.push(' ');
+    // }
     
     console.log(emptyDays);
   return (
