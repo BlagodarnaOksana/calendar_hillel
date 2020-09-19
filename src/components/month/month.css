@@ -1,10 +1,7 @@
 .monthComponent{
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
-    
 }
 
 /*название месяцев*/

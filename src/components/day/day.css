@@ -1,4 +1,51 @@
+/* .dayComponent{
+   
+} 
+.today{
+    border: solid 1px rgb(14, 235, 14);
+}*/
+
 .todoComponent{
+    margin-top: 20px;
+    width: 100%;
     color: white;
     font-size: 36px;
+    
+    
+}
+
+.OneTodo{
+     
+    display: grid;
+    /* border: solid 1px #64e6ca9d; */
+    margin-bottom: 20px;
+    
+}
+.OneTodo > input{
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    border: none;
+    
+}
+.OneTodo > input:first-child{
+    
+    /* text-align: center; */
+    color: #9198e5;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.btnComponent{
+    display: flex;
+    justify-content: center;
+}
+.btnAdd{
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    background: linear-gradient(#64e6ca9d, #9198e5);
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: 20px;
 }

@@ -41,24 +41,27 @@ class Day extends React.Component {
             </div> 
                 
             <div className='todoComponent'>
+                
                 {this.state.todo.map((el, ind) => (
-                    <div key={ind}>
-                        <div>
+                    <div key={ind} >
+                        <form className = 'OneTodo'>
                             <input type='text' name='title' id = {ind} value = {el.title}
                                 onChange = {this.handleTitleChange}
                             />
-                        </div>
-                        <div>
+                        
+                        
                             <input type='text' name='description' id = {ind} 
                                 value = {el.description}
                                 onChange = {this.handleDescriptionChange}
                             />
-                        </div>
+                        </form>
                         
                     </div>
                     
                 ))}
-                <input type='submit' value = 'Add' onClick = {this.handleBtnAdd}/>
+                <form className='btnComponent'>
+                    <input type='submit' className='btnAdd' value = 'Add' onClick = {this.handleBtnAdd}/>
+                </form>
             </div>
 
         </div>

@@ -54,8 +54,8 @@ function App() {
       <Route path="/today" exact render={()=> {
         
         return (
-        <div>
-            <Day />
+        <div className = "today">
+            {new Date().toLocaleString('default', {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
         </div>
         )
         
