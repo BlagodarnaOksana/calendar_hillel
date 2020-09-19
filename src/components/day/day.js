@@ -4,8 +4,8 @@ import {reactLocalStorage} from 'reactjs-localstorage';
 
 class Day extends React.Component {
     state = {
-        date: '05.09.2020',
-        todo: reactLocalStorage.getObject('05.09.2020').todo
+        date: this.props.Date,
+        todo: reactLocalStorage.getObject(this.props.Date).todo || []
     }
     
     handleTitleChange = (event) => {
@@ -31,18 +31,20 @@ class Day extends React.Component {
     }
 
     render(){
-       
+    console.log('console', this.props);
+    let selectedDay =  this.props.Date.split('.');
     return (
         <div className='dayComponent'>
             <div className="today">
-            {new Date().toLocaleString('default', {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+                {new Date(selectedDay[2], selectedDay[1]-1,selectedDay[0]).toLocaleString('default', {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+                
             </div> 
                 
             <div className='todoComponent'>
                 {this.state.todo.map((el, ind) => (
                     <div key={ind}>
                         <div>
-                            <input type='text' name='title' id = {ind}                                value = {el.title}
+                            <input type='text' name='title' id = {ind} value = {el.title}
                                 onChange = {this.handleTitleChange}
                             />
                         </div>

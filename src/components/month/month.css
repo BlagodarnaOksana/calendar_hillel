@@ -50,3 +50,9 @@
 .currDay{
     color: red;
 }
+.dayWithTodo{
+    color: #06b690;
+}
+.everyDay{
+    color: white;
+}

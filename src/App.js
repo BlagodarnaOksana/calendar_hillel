@@ -42,6 +42,15 @@ function App() {
         return (<Redirect to={redirectPath} />)
       }}/>
 
+      <Route path="/day/:date" exact render={({match}) => {
+        
+        return (
+          <div>
+              <Day Date = {match.params.date}/>
+          </div>
+          )
+      }}/>
+
       <Route path="/today" exact render={()=> {
         
         return (

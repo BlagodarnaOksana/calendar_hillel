@@ -1,6 +1,7 @@
 //import React, { Component } from 'react';
 import React from 'react';
 import './month.css';
+import {reactLocalStorage} from 'reactjs-localstorage';
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,6 +9,7 @@ import {
   Link,
   Redirect
 } from "react-router-dom";
+
 
 class Month extends React.Component {
   
@@ -45,12 +47,17 @@ class Month extends React.Component {
     </div>
     <div className='weekDays'>
       {weekDays.map((dayTitle, ind) => <div className='dayTitle' key={ind}> {dayTitle} </div>)}
-      {day.map((day, ind) => <div 
-      key={ind} 
-      className={today === day && currMonth && currYear? 'currDay' : ''}
-      > 
-      {day} 
-      </div>)}
+      {day.map((day, ind) => (
+        <Link to={`/day/${day}.${firstDayOfMonth.getMonth()+1}.${firstDayOfMonth.getFullYear()}`}>
+            <div key={ind} 
+            // className={today === day && currMonth && currYear? 'currDay' : ''}
+            className = {reactLocalStorage.get(day + '.' + String(firstDayOfMonth.getMonth()+1) + '.'+ firstDayOfMonth.getFullYear()) ? 'dayWithTodo': 'everyDay'}
+            > 
+            {day} 
+            </div>
+        </Link>
+      ))
+      }
 
     </div>
     
