@@ -41,13 +41,13 @@ class Day extends React.Component {
             let currentTodo = [];
             this.setState({todo: currentTodo});
             localStorage.removeItem(this.state.date);
-        } else{
+        } else {
             let currentTodo = [];
             
             for (let i = 0; i < this.state.todo.length; i++) {
                 
                 if (i !== Number(event.target.id)) {
-                    console.log('i:' + i, 'event.target.id:' + event.target.id);
+                    //console.log('i:' + i, 'event.target.id:' + event.target.id);
                     currentTodo.push(this.state.todo[i]); 
                 }
             }
@@ -69,25 +69,31 @@ class Day extends React.Component {
             <div className='todoComponent'>
                 
                 {this.state.todo.map((el, ind) => (
-                    <div key={Math.random().toString(16).substring(2, 10)} >
+                    <div key={ind} >
                         <form className = 'OneTodo'>
-                            <div key={ Math.random().toString(16).substring(2, 10)}>
-                                <input type='text' name='title' id = {ind} value = {el.title}
+                            <div >
+                                <input type='text'
+                                    name='title' 
+                                     id = {ind} 
+                                     value = {el.title}
                                     onChange = {this.handleTitleChange}
                                 />
                             
                             
-                                <input type='text' name='description' id = {ind} 
+                                <input type='text' 
+                                    name='description' 
+                                    id = {ind} 
                                     value = {el.description}
                                     onChange = {this.handleDescriptionChange}
                                 />
                             </div>
-                            <div key={Math.random().toString(16).substring(2, 10)}> 
+                            <div > 
+
                                 <input type='button' 
-                                className='btnDel' 
-                                value = 'Delete' 
-                                id = {ind}  
-                                onClick = {this.handleBtnDel}/>
+                                    className='btnDel' 
+                                    value = 'Delete' 
+                                    id = {ind}  
+                                    onClick = {this.handleBtnDel}/>
                             </div>
                         </form>
                         
@@ -95,8 +101,7 @@ class Day extends React.Component {
                     
                 ))}
                 <form className='btnComponent'>
-                    <input type='submit' className='btnAdd' value = 'Add' onClick = {this.handleBtnAdd}/>
-                   
+                    <input type='submit' className='btnAdd' value = 'Add todo' onClick = {this.handleBtnAdd}/>
                 </form>
             </div>
 
