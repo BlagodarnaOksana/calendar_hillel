@@ -38,6 +38,10 @@
     
     
 }
+
+.weekDays div:nth-child(6n){
+    color: rgb(199, 16, 245);
+}
 .weekDays div:nth-child(7n){
     color: rgb(199, 16, 245);
 }
