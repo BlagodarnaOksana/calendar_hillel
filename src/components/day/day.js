@@ -5,7 +5,9 @@ import {reactLocalStorage} from 'reactjs-localstorage';
 class Day extends React.Component {
     state = {
         date: this.props.Date,
+        //id: Math.random().toString(16).substring(2, 10),
         todo: reactLocalStorage.getObject(this.props.Date).todo || []
+        
     }
     
     handleTitleChange = (event) => {
@@ -14,6 +16,7 @@ class Day extends React.Component {
 
         this.setState({todo: currentTodo});
         reactLocalStorage.setObject(this.state.date, {todo: this.state.todo});
+        
     }
 
     handleDescriptionChange = (event) => {
@@ -22,16 +25,39 @@ class Day extends React.Component {
 
         this.setState({todo: currentTodo});
         reactLocalStorage.setObject(this.state.date, {todo: this.state.todo});
+        
     }
     handleBtnAdd = () => {
         let currentTodo = this.state.todo;
         currentTodo.push({title: 'title', description: 'description'});
         this.setState({todo: currentTodo});
         reactLocalStorage.setObject(this.state.date, {todo: this.state.todo});
+        
+    }
+
+    handleBtnDel = (event) => {
+        if (this.state.todo.length <= 1) {
+            //console.log(currentTodo);
+            let currentTodo = [];
+            this.setState({todo: currentTodo});
+            localStorage.removeItem(this.state.date);
+        } else{
+            let currentTodo = [];
+            
+            for (let i = 0; i < this.state.todo.length; i++) {
+                
+                if (i !== Number(event.target.id)) {
+                    console.log('i:' + i, 'event.target.id:' + event.target.id);
+                    currentTodo.push(this.state.todo[i]); 
+                }
+            }
+            this.setState({todo: currentTodo});
+            reactLocalStorage.setObject(this.state.date, {todo: currentTodo});
+        }
     }
 
     render(){
-    console.log('console', this.props);
+    //console.log('console', this.props);
     let selectedDay =  this.props.Date.split('.');
     return (
         <div className='dayComponent'>
@@ -43,17 +69,26 @@ class Day extends React.Component {
             <div className='todoComponent'>
                 
                 {this.state.todo.map((el, ind) => (
-                    <div key={ind} >
+                    <div key={Math.random().toString(16).substring(2, 10)} >
                         <form className = 'OneTodo'>
-                            <input type='text' name='title' id = {ind} value = {el.title}
-                                onChange = {this.handleTitleChange}
-                            />
-                        
-                        
-                            <input type='text' name='description' id = {ind} 
-                                value = {el.description}
-                                onChange = {this.handleDescriptionChange}
-                            />
+                            <div key={ Math.random().toString(16).substring(2, 10)}>
+                                <input type='text' name='title' id = {ind} value = {el.title}
+                                    onChange = {this.handleTitleChange}
+                                />
+                            
+                            
+                                <input type='text' name='description' id = {ind} 
+                                    value = {el.description}
+                                    onChange = {this.handleDescriptionChange}
+                                />
+                            </div>
+                            <div key={Math.random().toString(16).substring(2, 10)}> 
+                                <input type='button' 
+                                className='btnDel' 
+                                value = 'Delete' 
+                                id = {ind}  
+                                onClick = {this.handleBtnDel}/>
+                            </div>
                         </form>
                         
                     </div>
@@ -61,6 +96,7 @@ class Day extends React.Component {
                 ))}
                 <form className='btnComponent'>
                     <input type='submit' className='btnAdd' value = 'Add' onClick = {this.handleBtnAdd}/>
+                   
                 </form>
             </div>
 

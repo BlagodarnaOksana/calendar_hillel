@@ -52,10 +52,14 @@ function App() {
       }}/>
 
       <Route path="/today" exact render={()=> {
+        let date1 = new Date();
+        let today1 = date1.getDate() + '.' + String(date1.getMonth()+1) + '.' + String(date1.getFullYear());
         
         return (
-        <div className = "today">
-            {new Date().toLocaleString('default', {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+        <div className = "today" key={Math.random().toString(16).substring(2, 10)}>
+          
+          <Day Date = {today1}/>
+                   
         </div>
         )
         

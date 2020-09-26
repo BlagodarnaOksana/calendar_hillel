@@ -10,25 +10,30 @@
     width: 100%;
     color: white;
     font-size: 36px;
-    
-    
 }
-
 .OneTodo{
-     
+    display: flex;
+}
+.OneTodo > div{
+    
     display: grid;
     /* border: solid 1px #64e6ca9d; */
     margin-bottom: 20px;
     
 }
-.OneTodo > input{
+.OneTodo > div:first-child{
+    width: 90%;
+    
+}
+
+.OneTodo > div > input{
     background-color: black;
     color: white;
     font-size: 20px;
     border: none;
     
 }
-.OneTodo > input:first-child{
+.OneTodo > div > input:first-child{
     
     /* text-align: center; */
     color: #9198e5;
@@ -47,5 +52,16 @@
     background: linear-gradient(#64e6ca9d, #9198e5);
     font-size: 28px;
     font-weight: 600;
-    margin-top: 20px;
+    margin: 30px;
+}
+
+.OneTodo > div:last-child > input{
+    width: 100px;
+    height: 30px;
+    border: solid 1px #9198e5;
+    color: white;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 20px;
 }
